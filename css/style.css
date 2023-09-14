@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.875rem;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-color: hsl(229, 57%, 11%);
+    color: hsl(243, 100%, 93%);
+}
+
+.main-div {
+    width: 850px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 30px;
+}
+
+.fylo {
+    width: 300px;
+    align-self: flex-end;
+    background-color: hsl(228, 56%, 26%);
+    padding: 30px;
+    border-radius: 10px 80px 10px 10px;
+}
+
+.icons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icons div {
+    background-color: hsl(229, 57%, 11%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.download-main {
+    width: 60%;
+}
+
+.download {
+    width: 100%;
+    padding: 30px;
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 10px;
+}
+
+.message {
+    background-color: white;
+    color: hsl(229, 57%, 11%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 20px;
+    width: 150px;
+    border-radius: 10px 10px 0 10px;
+    position: relative;
+    margin-left: auto;
+    right: 35px;
+    top: 20px;
+}
+
+.message-tail {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    background-color: white;
+    width: 20px;
+    height: 40%;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.message h1 {
+    font-size: 2rem;
+}
+
+.message p {
+    font-size: 0.65rem;
+    color: hsl(229, 7%, 55%);
+}
+
+.download p {
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.numbers {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.progress {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 17px;
+    margin: 10px 0;
+    border-radius: 30px;
+    background: hsl(229, 57%, 11%, 0.5);
+}
+
+.progress::before {
+    content: '';
+    display: flex;
+    width: calc(var(--percent) * 1%);
+    height: 75%;
+    --percent: 75;
+    border-radius: 30px;
+    margin-left: 3px;
+    background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+.round {
+    position: absolute;
+    right: 25%;
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+/* ========== ADAPTATION ========== */
+
+@media screen and (max-width: 555px) {
+    body {
+        background-image: url("../images/bg-mobile.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .main-div {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fylo {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .download-main {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .message {
+        border-radius: 10px;
+        top: -20px;
+        right: 0px;
+        margin-right: auto;
+    }
+
+    .message-tail {
+        display: none;
+    }
+}
